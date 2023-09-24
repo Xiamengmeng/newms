@@ -8,13 +8,13 @@
       <i class="el-icon-s-operation" v-else></i>
     </div>
     <div v-for="(item,index) in menuList">
-      <el-submenu :index="index">
+      <el-submenu :index="index.toString()">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>{{ item.menuName }}</span>
         </template>
         <el-menu-item-group v-for="(ele,ind) in item.Children">
-          <el-menu-item :index="ind">{{ ele.menuName }}</el-menu-item>
+          <el-menu-item :index="ind.toString()">{{ ele.menuName }}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </div>
