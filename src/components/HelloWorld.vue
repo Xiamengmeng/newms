@@ -5,9 +5,9 @@
     <!-- 内容 -->
     <div>
       <!-- 侧边栏 -->
-      <navBar></navBar>
+      <navBar class="nav-bar"></navBar>
       <!-- 内容 -->
-      <div>
+      <div class="content-bar">
         <tagsView></tagsView>
         <appMain></appMain>
       </div>
@@ -40,5 +40,17 @@ export default {
   width: 100%;
   color: aliceblue;
   background: linear-gradient(to bottom right, blue, rgb(87, 133, 231));
+  margin: 0;
+  padding: 0;
+}
+.nav-bar{
+  z-index:500;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+}
+.content-bar{
+  z-index:1;
+  display: inline-block;
 }
 </style>

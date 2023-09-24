@@ -7,13 +7,13 @@
       <i class="el-icon-s-fold" v-if="isCollapse"></i>
       <i class="el-icon-s-operation" v-else></i>
     </div>
-    <div v-for="(item,index) in menuList">
+    <div v-for="(item,index) in menuList" :key="index">
       <el-submenu :index="index.toString()">
         <template slot="title">
           <i class="el-icon-location"></i>
           <span>{{ item.menuName }}</span>
         </template>
-        <el-menu-item-group v-for="(ele,ind) in item.Children">
+        <el-menu-item-group v-for="(ele,ind) in item.Children" :key="ind">
           <el-menu-item :index="ind.toString()">{{ ele.menuName }}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
@@ -53,6 +53,6 @@
 <style scoped>
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
-    min-height: 400px;
+    min-height: 100%;
   }
 </style>
